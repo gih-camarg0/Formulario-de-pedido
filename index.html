@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Açaiteria Online</title>
+</head>
+<style>
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #fcf0ff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+h1 {
+    text-align: center;
+    color: #9822e6;
+    margin-bottom: 30px;
+}
+
+form {
+    background-color: #ffffff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+}
+
+h3 {
+    color: #9822e6;
+    margin-top: 20px;
+    border-bottom: 1px solid #cfa7f5;
+    padding-bottom: 5px;
+}
+
+label {
+    display: block;
+    margin: 8px 0;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #fcfcfc;
+    margin-top: 5px;
+}
+
+input[type="submit"] {
+    background-color: #9822e6;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #9822e6;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 8px;
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+    }
+}
+
+</style>
+<body>
+    <form action="Action.php" method="POST">
+        <h1>Monte Seu Açaí</h1>
+
+        <h3>Tamanhos</h3>
+        <label><input type="radio" name="tamanho" value="300ml" required> 300ml (R$ 9)</label><br>
+        <label><input type="radio" name="tamanho" value="500ml"> 500ml (R$ 14)</label><br>
+        <label><input type="radio" name="tamanho" value="700ml"> 700ml (R$ 18)</label><br><br>
+
+        <h3>Escolha um extra</h3>
+        <select name="extra[]" multiple size="3">
+            <option value="guardanapo">Guardanapo</option>
+            <option value="colher"> Colher </option>
+            <option value="canudo"> Canudo </option>
+        </select><br><br>
+
+        <h3>Escolha até 3 adicionais</h3>
+        <label><input type="checkbox" name="adicionais[]" value="leite-condensado"> Leite Condensado </label><br>
+        <label><input type="checkbox" name="adicionais[]" value="leite-ninho"> Leite ninho </label><br><br>
+        <label><input type="checkbox" name="adicionais[]" value="chocoball"> ChocoBall </label><br>
+        <label><input type="checkbox" name="adicionais[]" value="granola"> Granola </label><br><br>
+        <label><input type="checkbox" name="adicionais[]" value="paçoca"> Paçoca </label><br>
+        <label><input type="checkbox" name="adicionais[]" value="nutella"> Nutella </label><br><br>
+        <label><input type="checkbox" name="adicionais[]" value="fini"> fini </label><br><br>
+
+        <h3>Frutas</h3>
+        <select name="frutas">
+            <option value="nenhuma">Nenhuma</option>
+            <option value="morango">Morango (R$ 2)</option>
+            <option value="banana">Banana (R$ 2)</option>
+            <option value="pessego">Pessego (R$ 2)</option>
+        </select><br><br>
+
+        <input type="submit" value="Finalizar Pedido">
+    </form>
+</body>
+</html>
